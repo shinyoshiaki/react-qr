@@ -1,2 +1,2 @@
 # Deploy
-https://shinyoshiaki.github.io/most-simple-videochat/build/
+https://shinyoshiaki.github.io/react-qr/build/
