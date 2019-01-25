@@ -5,7 +5,11 @@ const BottomBar: React.FunctionComponent<{
   handleChange: (value: any) => void;
 }> = ({ handleChange }) => {
   return (
-    <BottomNavigation onChange={(_, v) => handleChange(v)} showLabels>
+    <BottomNavigation
+      onChange={(_, v) => handleChange(v)}
+      showLabels
+      style={{ height: "7vh" }}
+    >
       <BottomNavigationAction label="connect" />
       <BottomNavigationAction label="text" />
       <BottomNavigationAction label="video" />

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import BottomBar from "../../../components/molecules/bottombar/index";
+import { Divider } from "@material-ui/core";
 
 export default class LayoutOrg extends Component<{}, {}> {
   handleBottomBar = (v: number) => {};
@@ -18,6 +19,7 @@ export default class LayoutOrg extends Component<{}, {}> {
             zIndex: 9999
           }}
         >
+          <Divider />
           <BottomBar handleChange={this.handleBottomBar} />
         </div>
       </div>
