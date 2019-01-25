@@ -8,7 +8,7 @@ import MeasureWrap from "./components/molecules/measure/index";
 
 export default class Test extends Component<
   {},
-  { stream?: MediaStream; qr: string }
+  { stream?: MediaStream; qr: string; result?: string }
 > {
   peer: WebRTC;
   constructor(props: any) {
@@ -28,6 +28,7 @@ export default class Test extends Component<
 
   handleScan = (data: any) => {
     if (data) {
+      this.setState({ result: data });
     }
   };
   handleError = (err: any) => {
@@ -51,16 +52,18 @@ export default class Test extends Component<
               onError={this.handleError}
               onScan={this.handleScan}
               style={{ width: "40vh" }}
+              facingMode={"user"}
             />
           </div>
           <br />
-          <div style={{ height: "50vh" }}>
+          <div style={{ height: "40vh" }}>
             <MeasureWrap
               target={(_, b) => {
                 return <QRCode value={this.state.qr} size={b} />;
               }}
             />
           </div>
+          <p>{this.state.result}</p>
         </div>
       </LayoutOrg>
     );
