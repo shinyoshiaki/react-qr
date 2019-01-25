@@ -30,7 +30,7 @@ const Answer: FunctionComponent = () => {
     }, 500);
     const stream = await getLocalVideo();
     setState({ stream });
-    peer = new WebRTC({ disable_stun: true });
+    peer = new WebRTC({});
 
     peer.signal = sdp => {
       console.log({ sdp });
