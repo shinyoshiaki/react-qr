@@ -46,15 +46,18 @@ export default class Test extends Component<
             flexDirection: "column"
           }}
         >
-          <div style={{ height: "40vh" }}>
-            <QrReader
-              delay={300}
-              onError={this.handleError}
-              onScan={this.handleScan}
-              style={{ width: "40vh" }}
-            />
-          </div>
+          {!this.state.result && (
+            <div style={{ height: "40vh" }}>
+              <QrReader
+                delay={300}
+                onError={this.handleError}
+                onScan={this.handleScan}
+                style={{ width: "40vh" }}
+              />
+            </div>
+          )}
           <br />
+
           <div style={{ height: "45vh" }}>
             <MeasureWrap
               target={(_, b) => {
@@ -62,6 +65,7 @@ export default class Test extends Component<
               }}
             />
           </div>
+
           <p>{this.state.result}</p>
         </div>
       </LayoutOrg>
